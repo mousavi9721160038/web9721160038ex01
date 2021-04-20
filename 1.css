@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+body {
+  font-size: 14px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  padding-left: 30px;
+  box-sizing: border-box;
+  background-color: #353535;
+  z-index: 1;
+}
+
+header > ul {
+  list-style: none;
+  display: flex;
+}
+
+header > ul > li {
+  padding: 10px;
+  font-weight: 800;
+}
+
+header > ul > li > a {
+  color: #ffffff;
+}
+
+header > ul > li > a:hover {
+  color: #f5deb3;
+}
+
+.active {
+  color: #f5deb3;
+}
+
+.introduction {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #f5deb3;
+  background-color: #353535;
+}
+
+.introduction h1,
+.introduction p {
+  padding: 15px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 50px 25px;
+  box-sizing: border-box;
+}
+
+.container > div {
+  position: relative;
+  flex-basis: 22%;
+  min-width: 240px;
+  max-width: 280px;
+  height: 300px;
+  margin: 30px 20px;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+}
+
+.container img {
+  position: absolute;
+  top: -40px;
+  right: -20px;
+  width: 100px;
+  height: 100px;
+}
+
+.container h2 {
+  position: absolute;
+  left: 10px;
+  top: 20px;
+}
+
+.container p {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  padding: 0 10px;
+  font-size: 0.8rem;
+}
+
+.container a {
+  position: absolute;
+  bottom: 20px;
+  padding: 0 10px;
+  color: rgb(95, 194, 240);
+  cursor: pointer;
+}
+
+.container a:hover {
+  color: rgb(13, 52, 134);
+}
+
+@media (max-width: 768px) {
+  header {
+    justify-content: center;
+    height: 120px;
+    padding: 0;
+  }
+  header > ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media print {
+  header,
+  .container a {
+    display: none;
+  }
+  .introduction {
+    height: 200px;
+  }
+  .container {
+    display: block;
+    padding: 0;
+  }
+  .container > div {
+    width: 60%;
+    min-width: unset;
+    max-width: unset;
+    margin: 40px auto 0 auto;
+    break-inside: avoid;
+  }
+  .container img {
+    top: 0px;
+    right: 0px;
+    width: 60px;
+    height: 60px;
+  }
+  .container p {
+    font-size: 1rem;
+  }
+}

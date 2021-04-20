@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+body {
+  font-size: 14px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  padding-left: 30px;
+  box-sizing: border-box;
+  background: linear-gradient(to left, rgb(59 203 247), rgb(196, 3, 93));
+  z-index: 1;
+}
+
+header > ul {
+  list-style: none;
+  display: flex;
+}
+
+header > ul > li {
+  padding: 10px;
+  font-weight: 800;
+}
+
+header > ul > li > a {
+  color: #000000;
+}
+
+header > ul > li > a:hover {
+  color: #dfdfdf;
+}
+
+.active {
+  color: #dfdfdf;
+}
+
+.introduction {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #dfdfdf;
+  background: linear-gradient(to left, rgb(59 203 247), rgb(196, 3, 93));
+}
+
+.introduction h1,
+.introduction p {
+  padding: 15px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+.container > div {
+  display: flex;
+  justify-content: space-between;
+  height: 300px;
+  margin: 30px 0;
+  border-radius: 5px;
+}
+
+.container > div > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  padding: 0 25px;
+  color: #f5deb3;
+  box-sizing: border-box;
+  background-color: #353535;
+}
+
+.container img {
+  width: 300px;
+  height: 300px;
+}
+
+@media (max-width: 768px) {
+  header {
+    justify-content: center;
+    height: 120px;
+    padding: 0;
+  }
+  header > ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  .container > div {
+    align-items: center;
+    flex-direction: column;
+    height: 600px;
+  }
+  .container > div > div {
+    order: 2;
+    width: 300px;
+  }
+}
+
+@media (max-width: 400px) {
+  .container > div {
+    height: 500px;
+  }
+  .container > div > div {
+    width: 250px;
+  }
+  .container img {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media print {
+  header {
+    display: none;
+  }
+  .introduction {
+    height: 200px;
+  }
+  .container {
+    display: block;
+    padding: 0;
+  }
+  .container > div {
+    flex-direction: row;
+    width: 80%;
+    margin: 50px auto 0 auto;
+    break-inside: avoid;
+    height: 100px;
+  }
+  .container > div > div {
+    order: 2;
+    width: 100%;
+    height: 100%;
+    color: #000000;
+  }
+  .container img {
+    width: 100px;
+    height: 100px;
+  }
+}

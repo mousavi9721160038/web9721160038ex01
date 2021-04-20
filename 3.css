@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+body {
+  font-size: 14px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  padding-left: 30px;
+  box-sizing: border-box;
+  background-color: rgb(24, 20, 20);
+  z-index: 1;
+}
+
+header > ul {
+  list-style: none;
+  display: flex;
+}
+
+header > ul > li {
+  padding: 10px;
+  font-weight: 800;
+}
+
+header > ul > li > a {
+  color: #ffffff;
+}
+
+header > ul > li > a:hover {
+  color: #fdff85;
+}
+
+.active {
+  color: #fdff85;
+}
+
+.introduction {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fdff85;
+  background-color: rgb(24, 20, 20);
+}
+
+.introduction h1,
+.introduction p {
+  padding: 15px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 50px 25px;
+  box-sizing: border-box;
+  background-color: rgb(24, 20, 20);
+}
+
+.container > div {
+  position: relative;
+  margin: 25px;
+  border-radius: 50%;
+
+}
+
+.container img {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.container span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  color: transparent;
+  background-color: transparent;
+  transition: all 0.3s;
+}
+
+.container span:hover {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+@media (max-width: 768px) {
+  header {
+    justify-content: center;
+    height: 120px;
+    padding: 0;
+  }
+  header > ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  .container img {
+    width: 150px;
+    height: 150px;
+  }
+  .container span {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media print {
+  header {
+    display: none;
+  }
+  .introduction {
+    height: 200px;
+  }
+  .container {
+    display: block;
+    padding: 0;
+  } 
+  .container > div {
+    margin: 30px calc( (100vw / 2 - 180px) / 2 );
+    float: left;
+    break-inside: avoid;
+  }
+  .container img {
+    width: 170px;
+    height: 170px;
+  }
+  .container span {
+    width: 170px;
+    height: 20px;
+    top: 180px;
+    border-radius: 0;
+    color: #000000;
+  }
+}
